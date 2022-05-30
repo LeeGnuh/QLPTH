@@ -1,0 +1,6 @@
+E:\CodeDatabase\Windows\Project\Demo3Layer\DTO\bin\Debug\DTO.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\DTO\bin\Debug\DTO.pdb
+E:\CodeDatabase\Windows\Project\Demo3Layer\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+E:\CodeDatabase\Windows\Project\Demo3Layer\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+E:\CodeDatabase\Windows\Project\Demo3Layer\DTO\obj\Debug\DTO.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\DTO\obj\Debug\DTO.pdb

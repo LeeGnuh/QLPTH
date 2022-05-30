@@ -1,0 +1,9 @@
+E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\bin\Debug\DAL.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\bin\Debug\DAL.pdb
+E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\bin\Debug\DTO.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\bin\Debug\DTO.pdb
+E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\obj\Debug\DAL.csproj.CopyComplete
+E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\obj\Debug\DAL.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\obj\Debug\DAL.pdb

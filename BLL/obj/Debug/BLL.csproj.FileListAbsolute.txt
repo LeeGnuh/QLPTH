@@ -1,0 +1,11 @@
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\bin\Debug\BLL.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\bin\Debug\BLL.pdb
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\bin\Debug\DAL.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\bin\Debug\DTO.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\bin\Debug\DAL.pdb
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\bin\Debug\DTO.pdb
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\obj\Debug\BLL.csproj.CopyComplete
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\obj\Debug\BLL.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\obj\Debug\BLL.pdb
