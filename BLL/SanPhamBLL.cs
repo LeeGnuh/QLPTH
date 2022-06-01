@@ -15,9 +15,12 @@ namespace BLL
         {
             return sanPhamDAL.getAllSP();
         }
-        public bool deleteAt(int ma)
+        public bool deleteAt(int maSP)
         {
-            return sanPhamDAL.deleteAt(ma);
+            ChiTietHDDAL chiTietHDDAL = new ChiTietHDDAL();
+            chiTietHDDAL.deleteAtSP(maSP);
+
+            return sanPhamDAL.deleteAt(maSP);
         }        
         public bool addSP_Object(SanPham sp)
         {
@@ -26,6 +29,14 @@ namespace BLL
                 return false;
             }            
             return sanPhamDAL.addSP_Object(sp);
+        }
+        public bool changeSP_At_Object(SanPham sp, int id)
+        {
+            if (sp.TenSP.Length == 0)
+            { 
+                return false; 
+            }
+            return sanPhamDAL.changeSP_At_Object(sp, id);
         }
     }
 }

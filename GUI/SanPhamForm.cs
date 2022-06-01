@@ -12,9 +12,9 @@ using BLL;
 
 namespace GUI
 {
-    public partial class Form1 : Form
+    public partial class SanPhamForm : Form
     {
-        public Form1()
+        public SanPhamForm()
         {
             InitializeComponent();
         }
@@ -75,6 +75,39 @@ namespace GUI
 
                 lvi.Tag = sp;
             }
+        }
+
+        private void lvSanPham_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (lvSanPham.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvSanPham.SelectedItems[0];
+                SanPham sp = lvi.Tag as SanPham;
+                SanPhamBLL spbll = new SanPhamBLL();
+
+                txtMa.Text = sp.MaSP.ToString();
+                txtTen.Text = sp.TenSP.ToString();
+                txtGia.Text = sp.GiaSP.ToString();
+                MaDM.Text = sp.MaDM.ToString();
+            }
+        }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {         
+            SanPham sp = new SanPham();
+
+            sp.MaSP = int.Parse(txtMa.Text);
+            sp.TenSP = txtTen.Text;
+            sp.GiaSP = int.Parse(txtGia.Text);
+            sp.MaDM = int.Parse(MaDM.Text);
+            
+            SanPhamBLL sanPhamBLL = new SanPhamBLL();
+            bool kq = sanPhamBLL.changeSP_At_Object(sp, sp.MaSP);
+
+            if (kq)
+            {
+                loadListViewSP();
+            }            
         }
     }
 }

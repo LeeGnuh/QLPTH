@@ -39,17 +39,34 @@ namespace DAL
             return DSSP;
         }
 
-        public bool deleteAt(int ma)
+        public bool deleteAt(int maSP)
         {
             openConn();
 
             SqlCommand commnand = new SqlCommand();
             commnand.CommandType = CommandType.Text;
 
-            commnand.CommandText = "delete from SanPham where MaSP = @ma";
+            commnand.CommandText = "delete from SanPham where MaSP = @maSP";
             commnand.Connection = conn;
 
-            commnand.Parameters.Add("@ma", SqlDbType.Int).Value = ma;
+            commnand.Parameters.Add("@maSP", SqlDbType.Int).Value = maSP;
+
+            int kq = commnand.ExecuteNonQuery();
+
+            return kq > 0;
+        }
+
+        public bool deleteAtDM(int maDM)
+        {
+            openConn();
+
+            SqlCommand commnand = new SqlCommand();
+            commnand.CommandType = CommandType.Text;
+
+            commnand.CommandText = "delete from SanPham where MaDM = @maDM";
+            commnand.Connection = conn;
+
+            commnand.Parameters.Add("@maDM", SqlDbType.Int).Value = maDM;
 
             int kq = commnand.ExecuteNonQuery();
 
@@ -76,7 +93,24 @@ namespace DAL
             return kq > 0;
 
         }
+        public bool changeSP_At_Object(SanPham sp, int id)
+        {
+            openConn();
 
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+
+            command.CommandText = "UPDATE SanPham SET TenSP = @ten, GiaSP = @gia, MaDM = @mdm WHERE MaSP = @id;";
+            command.Connection = conn;
+
+            command.Parameters.Add("@ten", SqlDbType.NVarChar).Value = sp.TenSP;
+            command.Parameters.Add("@gia", SqlDbType.Int).Value = sp.GiaSP;
+            command.Parameters.Add("@mdm", SqlDbType.Int).Value = sp.MaDM;
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+            int kq = command.ExecuteNonQuery();
+
+            return kq > 0;
+        }
     }
-
 }
