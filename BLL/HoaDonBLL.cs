@@ -8,7 +8,7 @@ using DTO;
 
 namespace BLL
 {
-    internal class HoaDonBLL
+    public class HoaDonBLL
     {
         HoaDonDAL hoaDonDAL = new HoaDonDAL();
         public List<HoaDon> getAllHD()

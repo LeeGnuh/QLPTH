@@ -16,5 +16,15 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtUname.Text == "admin" && txtPass.Text == "admin")
+            {                
+                MenuForm menuForm = new MenuForm();
+                menuForm.ShowDialog();
+                this.Close();
+            }    
+        }
     }
 }

@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietHDForm.Designer.cs">
+      <DependentUpon>ChiTietHDForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhMucForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMucForm.Designer.cs">
+      <DependentUpon>DanhMucForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoaDonForm.Designer.cs">
+      <DependentUpon>HoaDonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiDungForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NguoiDungForm.Designer.cs">
+      <DependentUpon>NguoiDungForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SanPhamForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +90,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChiTietHDForm.resx">
+      <DependentUpon>ChiTietHDForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMucForm.resx">
+      <DependentUpon>DanhMucForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoaDonForm.resx">
+      <DependentUpon>HoaDonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NguoiDungForm.resx">
+      <DependentUpon>NguoiDungForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SanPhamForm.resx">
       <DependentUpon>SanPhamForm.cs</DependentUpon>
     </EmbeddedResource>

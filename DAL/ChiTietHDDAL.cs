@@ -37,7 +37,65 @@ namespace DAL
             reader.Close();
             return DSCT;
         }
+        public List<ChiTietHD> select_MaHD(int maHD)
+        {
+            List<ChiTietHD> list = new List<ChiTietHD>();
 
+            openConn();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+
+            command.CommandText = "select * from ChiTietHD Where MaHD = @maHD";
+            command.Connection = conn;
+
+            command.Parameters.Add("@maHD", SqlDbType.Int).Value = maHD;
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ChiTietHD ct = new ChiTietHD();
+
+                ct.MaHD = reader.GetInt32(0);
+                ct.MaSP = reader.GetInt32(1);
+                ct.SoLuong = reader.GetInt32(2);
+
+                list.Add(ct);
+            }
+            reader.Close();
+            return list;
+        }
+
+        public List<ChiTietHD> select_MaSP(int maSP)
+        {
+            List<ChiTietHD> list = new List<ChiTietHD>();
+
+            openConn();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+
+            command.CommandText = "select * from ChiTietHD Where MaSP = @maSP";
+            command.Connection = conn;
+
+            command.Parameters.Add("@maSP", SqlDbType.Int).Value = maSP;
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ChiTietHD ct = new ChiTietHD();
+
+                ct.MaHD = reader.GetInt32(0);
+                ct.MaSP = reader.GetInt32(1);
+                ct.SoLuong = reader.GetInt32(2);
+
+                list.Add(ct);
+            }
+            reader.Close();
+            return list;
+        }
         public bool deleteAt(int maHD, int maSP)
         {
             openConn();
@@ -45,7 +103,7 @@ namespace DAL
             SqlCommand commnand = new SqlCommand();
             commnand.CommandType = CommandType.Text;
 
-            commnand.CommandText = "delete from ChiTietHD where MaHD = @maHD, MaSP = @maSP";
+            commnand.CommandText = "delete from ChiTietHD where MaHD = @maHD And MaSP = @maSP";
             commnand.Connection = conn;
 
             commnand.Parameters.Add("@maHD", SqlDbType.Int).Value = maHD;
@@ -73,6 +131,19 @@ namespace DAL
             return kq > 0;
         }
 
+        public bool deleteAtHD(List<HoaDon> list)
+        {
+            foreach (HoaDon hd in list)
+            {
+                try
+                {
+                    deleteAtHD(hd.MaHD);
+                }
+                catch { return false; }
+            }
+            return true;
+        }
+
         public bool deleteAtSP(int maSP)
         {
             openConn();
@@ -89,7 +160,18 @@ namespace DAL
 
             return kq > 0;
         }
-
+        public bool deleteAtSP(List<SanPham> list)
+        {
+            foreach (SanPham sp in list)
+            {
+                try
+                {
+                    deleteAtSP(sp.MaSP);
+                }
+                catch { return false; }
+            }
+            return true;
+        }
 
         public bool addCT_Object(ChiTietHD ct)
         {
@@ -117,7 +199,7 @@ namespace DAL
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.Text;
 
-            command.CommandText = "UPDATE SanPham SET SoLuong = @sl WHERE MaHD = @maHD, MaSP = @maSP";
+            command.CommandText = "UPDATE ChiTietHD SET SoLuong = @sl WHERE MaHD = @maHD And MaSP = @maSP";
             command.Connection = conn;
           
             command.Parameters.Add("@sl", SqlDbType.Int).Value = ct.SoLuong;

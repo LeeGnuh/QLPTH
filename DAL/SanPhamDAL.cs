@@ -39,6 +39,35 @@ namespace DAL
             return DSSP;
         }
 
+        public List<SanPham> select_MaDM(int maDM)
+        {
+            List<SanPham> list = new List<SanPham>();
+            openConn();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+
+            command.CommandText = "select * from SanPham where MaDM = @maDM";
+            command.Connection = conn;
+
+            command.Parameters.Add("@maDM", SqlDbType.Int).Value = maDM;
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                SanPham sp = new SanPham();
+
+                sp.MaSP = reader.GetInt32(0);
+                sp.TenSP = reader.GetString(1);
+                sp.GiaSP = reader.GetInt32(2);
+                sp.MaDM = reader.GetInt32(3);
+
+                list.Add(sp);
+            }
+            reader.Close();
+            return list;
+        }
+
         public bool deleteAt(int maSP)
         {
             openConn();

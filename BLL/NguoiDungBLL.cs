@@ -17,7 +17,10 @@ namespace BLL
         }
         public bool deleteAt(int maND)
         {
+            ChiTietHDDAL chiTietHDDAL = new ChiTietHDDAL();
             HoaDonDAL hoaDonDAL = new HoaDonDAL();
+
+            chiTietHDDAL.deleteAtHD(hoaDonDAL.select_MaND(maND));
             hoaDonDAL.deleteAtND(maND);
 
             return nguoiDungDAL.deleteAt(maND);

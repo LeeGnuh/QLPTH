@@ -110,35 +110,38 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(71, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 16);
+            this.label1.Size = new System.Drawing.Size(98, 18);
             this.label1.TabIndex = 5;
             this.label1.Text = "Mã sản phẩm";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(71, 161);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 16);
+            this.label3.Size = new System.Drawing.Size(100, 18);
             this.label3.TabIndex = 7;
             this.label3.Text = "Giá sản phẩm";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(71, 126);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 16);
+            this.label4.Size = new System.Drawing.Size(102, 18);
             this.label4.TabIndex = 8;
             this.label4.Text = "Tên sản phẩm";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(552, 92);
+            this.btnAdd.Location = new System.Drawing.Point(518, 92);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(121, 36);
+            this.btnAdd.Size = new System.Drawing.Size(155, 35);
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Thêm sản phẩm";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -146,9 +149,9 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(552, 134);
+            this.btnDel.Location = new System.Drawing.Point(518, 134);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(121, 36);
+            this.btnDel.Size = new System.Drawing.Size(155, 35);
             this.btnDel.TabIndex = 10;
             this.btnDel.Text = "Xóa sản phẩm";
             this.btnDel.UseVisualStyleBackColor = true;
@@ -157,9 +160,10 @@
             // txtMaDM
             // 
             this.txtMaDM.AutoSize = true;
+            this.txtMaDM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaDM.Location = new System.Drawing.Point(71, 196);
             this.txtMaDM.Name = "txtMaDM";
-            this.txtMaDM.Size = new System.Drawing.Size(87, 16);
+            this.txtMaDM.Size = new System.Drawing.Size(98, 18);
             this.txtMaDM.TabIndex = 6;
             this.txtMaDM.Text = "Mã danh mục";
             // 
@@ -172,9 +176,9 @@
             // 
             // btnChange
             // 
-            this.btnChange.Location = new System.Drawing.Point(552, 176);
+            this.btnChange.Location = new System.Drawing.Point(518, 176);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(121, 36);
+            this.btnChange.Size = new System.Drawing.Size(155, 35);
             this.btnChange.TabIndex = 10;
             this.btnChange.Text = "Sửa sản phẩm";
             this.btnChange.UseVisualStyleBackColor = true;
@@ -191,7 +195,7 @@
             this.label2.Text = "QUẢN LÝ SẢN PHẨM";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form1
+            // SanPhamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -209,8 +213,8 @@
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.txtMa);
             this.Controls.Add(this.lvSanPham);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "SanPhamForm";
+            this.Text = "Sản phẩm";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

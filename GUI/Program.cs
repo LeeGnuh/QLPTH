@@ -16,7 +16,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SanPhamForm());
+            Application.Run(new LoginForm());
         }
     }
 }

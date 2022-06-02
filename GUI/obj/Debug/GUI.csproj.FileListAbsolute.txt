@@ -18,3 +18,7 @@ E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\bin\Debug\DAL.pdb
 E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.LoginForm.resources
 E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.MenuForm.resources
 E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.SanPhamForm.resources
+E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.NguoiDungForm.resources
+E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.ChiTietHDForm.resources
+E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.HoaDonForm.resources
+E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.DanhMucForm.resources

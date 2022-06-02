@@ -37,7 +37,33 @@ namespace DAL
             reader.Close();
             return DSHD;
         }
+        public List<HoaDon> select_MaND(int maND)
+        {
+            List<HoaDon> list = new List<HoaDon>();
+            openConn();
 
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+
+            command.CommandText = "select * from HoaDon where MaND = @maND";
+            command.Connection = conn;
+
+            command.Parameters.Add("@maND", SqlDbType.Int).Value = maND;
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                HoaDon hd = new HoaDon();
+
+                hd.MaHD = reader.GetInt32(0);
+                hd.MaND = reader.GetInt32(1);
+                hd.NgayTao = reader.GetString(2);
+
+                list.Add(hd);
+            }
+            reader.Close();
+            return list;
+        }
         public bool deleteAt(int maHD)
         {
             openConn();
@@ -82,7 +108,7 @@ namespace DAL
             command.Connection = conn;
 
             command.Parameters.Add("@maHD", SqlDbType.Int).Value = hd.MaHD;
-            command.Parameters.Add("@ten", SqlDbType.Int).Value = hd.MaND;
+            command.Parameters.Add("@maND", SqlDbType.Int).Value = hd.MaND;
             command.Parameters.Add("@ngay", SqlDbType.VarChar).Value = hd.NgayTao;
 
             int kq = command.ExecuteNonQuery();

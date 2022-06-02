@@ -83,7 +83,6 @@ namespace GUI
             {
                 ListViewItem lvi = lvSanPham.SelectedItems[0];
                 SanPham sp = lvi.Tag as SanPham;
-                SanPhamBLL spbll = new SanPhamBLL();
 
                 txtMa.Text = sp.MaSP.ToString();
                 txtTen.Text = sp.TenSP.ToString();
