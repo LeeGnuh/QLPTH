@@ -11,7 +11,7 @@ namespace DAL
     public class DataAccessDAL
     {
         public SqlConnection conn = null;
-        string strConn = @"Data Source=9H1ENY893ZBJDQQ\LEEGNUH; Initial Catalog=Demo3Layer; Integrated Security=True";
+        string strConn = @"Data Source=9H1ENY893ZBJDQQ\LEEGNUH;Initial Catalog=QLPTH;Integrated Security=True";
         public void openConn()
         {
             if (conn == null)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,16 +15,25 @@ namespace GUI
     {
         public LoginForm()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Login_Click(object sender, EventArgs e)
         {
-            if (txtUname.Text == "admin" && txtPass.Text == "admin")
-            {                
+            AccountBLL accountBLL = new AccountBLL();
+            string permision = accountBLL.user_login(txtUname.Text, txtPass.Text);
+            if (permision == "admin")
+            {
+                this.Hide();
                 MenuForm menuForm = new MenuForm();
                 menuForm.ShowDialog();
-                this.Close();
+                txtUname.Text = "";
+                txtPass.Text = "";
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Thông tin đăng nhập không chính xác", "Thông báo");
             }    
         }
     }

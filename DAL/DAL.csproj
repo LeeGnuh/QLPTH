@@ -41,13 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiTietHDDAL.cs" />
-    <Compile Include="DanhMucDAL.cs" />
+    <Compile Include="AccountDAL.cs" />
+    <Compile Include="ComputerDAL.cs" />
     <Compile Include="DataAccessDAL.cs" />
-    <Compile Include="HoaDonDAL.cs" />
-    <Compile Include="NguoiDungDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SanPhamDAL.cs" />
+    <Compile Include="RoomDAL.cs" />
+    <Compile Include="ScheduceDAL.cs" />
+    <Compile Include="StatusDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

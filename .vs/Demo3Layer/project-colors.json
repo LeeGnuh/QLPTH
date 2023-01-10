@@ -30,7 +30,22 @@
       "ProjectGuid": "fade20b6-3690-403b-b72d-99457db1a480",
       "DisplayName": "Web",
       "ColorIndex": 4
+    },
+    "33f9e788-b123-4c97-b431-0d3943720647": {
+      "ProjectGuid": "33f9e788-b123-4c97-b431-0d3943720647",
+      "DisplayName": "WebGUI",
+      "ColorIndex": 5
+    },
+    "63874c20-9007-4d35-ad0b-9b216821d42e": {
+      "ProjectGuid": "63874c20-9007-4d35-ad0b-9b216821d42e",
+      "DisplayName": "WpfGUI",
+      "ColorIndex": 6
+    },
+    "f43fe442-a985-41d8-a99f-f0c6fc90eead": {
+      "ProjectGuid": "f43fe442-a985-41d8-a99f-f0c6fc90eead",
+      "DisplayName": "MaterialGUI",
+      "ColorIndex": 7
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 8
 }

@@ -15,36 +15,35 @@ namespace GUI
         public MenuForm()
         {
             InitializeComponent();
+        }        
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
-        private void btnDanhMuc_Click(object sender, EventArgs e)
+        private void btn_Account_Click(object sender, EventArgs e)
         {
-            DanhMucForm danhMucForm = new DanhMucForm();
-            danhMucForm.ShowDialog();
+            this.Hide();
+            AccountForm accountform = new AccountForm();
+            accountform.ShowDialog();
+            this.Show();
         }
 
-        private void btnSanPham_Click(object sender, EventArgs e)
+        private void btn_Scheduce_Click(object sender, EventArgs e)
         {
-            SanPhamForm sanPhamForm = new SanPhamForm();
-            sanPhamForm.ShowDialog();
+            this.Hide();
+            ScheduceForm scheduceForm = new ScheduceForm();
+            scheduceForm.ShowDialog();
+            this.Show();
         }
 
-        private void btnNguoiDung_Click(object sender, EventArgs e)
+        private void btn_Room_Click(object sender, EventArgs e)
         {
-            NguoiDungForm nguoiDungForm = new NguoiDungForm();
-            nguoiDungForm.ShowDialog();
-        }
-
-        private void btnHoaDon_Click(object sender, EventArgs e)
-        {
-            HoaDonForm hoaDonForm = new HoaDonForm();
-            hoaDonForm.ShowDialog();
-        }
-
-        private void btnCTHD_Click(object sender, EventArgs e)
-        {
-            ChiTietHDForm chiTietHDForm = new ChiTietHDForm();
-            chiTietHDForm.ShowDialog();
+            this.Hide();
+            RoomForm roomForm = new RoomForm();
+            roomForm.ShowDialog();
+            this.Show();
         }
     }
 }
+ 

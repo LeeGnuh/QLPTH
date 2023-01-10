@@ -12,6 +12,23 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,7 +49,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=2.0.9.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.2.0.9\lib\net462\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.6.1.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.4.6.1\lib\net462\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,35 +73,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiTietHDForm.cs">
+    <Compile Include="AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChiTietHDForm.Designer.cs">
-      <DependentUpon>ChiTietHDForm.cs</DependentUpon>
+    <Compile Include="AccountForm.Designer.cs">
+      <DependentUpon>AccountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhMucForm.cs">
+    <Compile Include="ComputerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMucForm.Designer.cs">
-      <DependentUpon>DanhMucForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HoaDonForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HoaDonForm.Designer.cs">
-      <DependentUpon>HoaDonForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NguoiDungForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NguoiDungForm.Designer.cs">
-      <DependentUpon>NguoiDungForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SanPhamForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SanPhamForm.Designer.cs">
-      <DependentUpon>SanPhamForm.cs</DependentUpon>
+    <Compile Include="ComputerForm.Designer.cs">
+      <DependentUpon>ComputerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -90,20 +99,60 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ChiTietHDForm.resx">
-      <DependentUpon>ChiTietHDForm.cs</DependentUpon>
+    <Compile Include="QLPTHDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLPTHDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLPTHDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLPTHDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLPTHDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLPTHDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLPTHDataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLPTHDataSet31.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLPTHDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLPTHDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLPTHDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLPTHDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomForm.Designer.cs">
+      <DependentUpon>RoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduceForm.Designer.cs">
+      <DependentUpon>ScheduceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="StatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatusForm.Designer.cs">
+      <DependentUpon>StatusForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AccountForm.resx">
+      <DependentUpon>AccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMucForm.resx">
-      <DependentUpon>DanhMucForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HoaDonForm.resx">
-      <DependentUpon>HoaDonForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NguoiDungForm.resx">
-      <DependentUpon>NguoiDungForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SanPhamForm.resx">
-      <DependentUpon>SanPhamForm.cs</DependentUpon>
+    <EmbeddedResource Include="ComputerForm.resx">
+      <DependentUpon>ComputerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -120,6 +169,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RoomForm.resx">
+      <DependentUpon>RoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduceForm.resx">
+      <DependentUpon>ScheduceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusForm.resx">
+      <DependentUpon>StatusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -129,6 +188,72 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLPTHDataSet.xsc">
+      <DependentUpon>QLPTHDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLPTHDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLPTHDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLPTHDataSet.xss">
+      <DependentUpon>QLPTHDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLPTHDataSet1.xsc">
+      <DependentUpon>QLPTHDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLPTHDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLPTHDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLPTHDataSet1.xss">
+      <DependentUpon>QLPTHDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLPTHDataSet2.xsc">
+      <DependentUpon>QLPTHDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLPTHDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLPTHDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLPTHDataSet2.xss">
+      <DependentUpon>QLPTHDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLPTHDataSet31.xsc">
+      <DependentUpon>QLPTHDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="QLPTHDataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLPTHDataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLPTHDataSet31.xss">
+      <DependentUpon>QLPTHDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="QLPTHDataSet4.xsc">
+      <DependentUpon>QLPTHDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="QLPTHDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLPTHDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLPTHDataSet4.xss">
+      <DependentUpon>QLPTHDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="QLPTHDataSet5.xsc">
+      <DependentUpon>QLPTHDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="QLPTHDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLPTHDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLPTHDataSet5.xss">
+      <DependentUpon>QLPTHDataSet5.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -143,5 +268,24 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets'))" />
+  </Target>
 </Project>
