@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0176ba53ddba465db00a1723e9d0ff29" Name="Diagram1">
+        <EntityTypeShape EntityType="QLPTHModel.account" Width="1.5" PointX="5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPTHModel.computer" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPTHModel.permision" Width="1.5" PointX="2.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPTHModel.room" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPTHModel.schedule_detail" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPTHModel.status" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPTHModel.subject" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPTHModel.teacher" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <AssociationConnector Association="QLPTHModel.FK__account__id_per__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPTHModel.FK__computer__id_roo__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPTHModel.FK__status__id_comp__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPTHModel.FK__schedule___id_ro__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPTHModel.FK__schedule___id_su__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPTHModel.FK__schedule___id_te__33D4B598" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

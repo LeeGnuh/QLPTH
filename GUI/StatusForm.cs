@@ -1,5 +1,5 @@
 ﻿using BLL;
-using DTO;
+using DALEntity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,11 +24,11 @@ namespace GUI
         private void loadListViewStatus()
         {
             StatusBLL statusBLL = new StatusBLL();
-            List<Status> ListStatus = statusBLL.getAllStt_Of_Comp(id);
+            List<status> ListStatus = statusBLL.getAllStt_Of_Comp(id);
 
             lvStatus.Items.Clear();
 
-            foreach (Status stt in ListStatus)
+            foreach (status stt in ListStatus)
             {
                 ListViewItem lvi = new ListViewItem(stt.id_status + "");
 
@@ -53,7 +53,7 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Status stt = new Status();
+            status stt = new status();
 
             stt.time = DateTime.Parse(dtp_time.Value.ToString());
             stt.lesson = int.Parse(txt_lession.Text);
@@ -71,7 +71,7 @@ namespace GUI
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            Status stt = new Status();
+            status stt = new status();
 
             stt.id_status = int.Parse(txt_id_status.Text);
             stt.time = DateTime.Parse(dtp_time.Value.ToString());
@@ -93,7 +93,7 @@ namespace GUI
             if (lvStatus.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvStatus.SelectedItems[0];
-                Status status = lvi.Tag as Status;
+                status status = lvi.Tag as status;
                 StatusBLL statusBLL = new StatusBLL();
 
                 bool kq = statusBLL.deleteAt(status.id_status);
@@ -110,10 +110,10 @@ namespace GUI
             if (lvStatus.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvStatus.SelectedItems[0];
-                Status status = lvi.Tag as Status;
+                status status = lvi.Tag as status;
 
                 txt_id_status.Text = status.id_status.ToString();
-                dtp_time.Value = status.time;
+                dtp_time.Value = (DateTime)status.time;
                 txt_lession.Text = status.lesson.ToString();
                 cb_id_comp.SelectedValue = status.id_comp.ToString();
                 txt_detail.Text = status.detail;

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTO;
+using DALEntity;
 using BLL;
 
 
@@ -23,11 +23,11 @@ namespace GUI
         private void loadListViewAcc()
         {
             AccountBLL accountBLL = new AccountBLL();
-            List<Account> ListAcc = accountBLL.getAllAcc();
+            List<account> ListAcc = accountBLL.getAllAcc();
 
             lvAcc.Items.Clear();
 
-            foreach (Account acc in ListAcc)
+            foreach (account acc in ListAcc)
             {
                 ListViewItem lvi = new ListViewItem(acc.id_acc + "");
 
@@ -52,7 +52,7 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Account acc = new Account();
+            account acc = new account();
 
             acc.username = txt_username.Text;
             acc.password = txt_password.Text;
@@ -74,7 +74,7 @@ namespace GUI
             if (lvAcc.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvAcc.SelectedItems[0];
-                Account acc = lvi.Tag as Account;
+                account acc = lvi.Tag as account;
                 AccountBLL accountBLL = new AccountBLL();
 
                 bool kq = accountBLL.deleteAt(acc.id_acc);
@@ -88,7 +88,7 @@ namespace GUI
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            Account acc = new Account();
+            account acc = new account();
 
             acc.id_acc = int.Parse(txt_id_acc.Text);
             acc.username = txt_username.Text;
@@ -111,7 +111,7 @@ namespace GUI
             if (lvAcc.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvAcc.SelectedItems[0];
-                Account acc = lvi.Tag as Account;
+                account acc = lvi.Tag as account;
 
                 txt_id_acc.Text = acc.id_acc.ToString();
                 txt_username.Text = acc.username.ToString();

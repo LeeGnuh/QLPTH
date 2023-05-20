@@ -1,5 +1,5 @@
 ﻿using BLL;
-using DTO;
+using DALEntity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,11 +21,11 @@ namespace GUI
         private void loadListViewRoom()
         {
             RoomBLL roomBLL = new RoomBLL();
-            List<Room> ListRoom = roomBLL.getAllRoom();
+            List<room> ListRoom = roomBLL.getAllRoom();
 
             lvRoom.Items.Clear();
 
-            foreach (Room room in ListRoom)
+            foreach (room room in ListRoom)
             {
                 ListViewItem lvi = new ListViewItem(room.id_room + "");
 
@@ -46,7 +46,7 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Room room = new Room();
+            room room = new room();
 
             room.id_room = int.Parse(txt_id_room.Text);
             room.room_name = txt_room_name.Text;
@@ -69,7 +69,7 @@ namespace GUI
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            Room room = new Room();
+            room room = new room();
 
             room.id_room = int.Parse(txt_id_room.Text);
             room.room_name = txt_room_name.Text;
@@ -94,7 +94,7 @@ namespace GUI
             if (lvRoom.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvRoom.SelectedItems[0];
-                Room room = lvi.Tag as Room;
+                room room = lvi.Tag as room;
                 RoomBLL roomBLL = new RoomBLL();
 
                 bool kq = roomBLL.deleteAt(room.id_room);
@@ -111,7 +111,7 @@ namespace GUI
             if (lvRoom.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvRoom.SelectedItems[0];
-                Room room = lvi.Tag as Room;
+                room room = lvi.Tag as room;
 
                 txt_id_room.Text = room.id_room.ToString();
                 txt_room_name.Text = room.room_name.ToString();
@@ -123,22 +123,25 @@ namespace GUI
         private void btn_Search_Click(object sender, EventArgs e)
         {
             RoomBLL roomBLL = new RoomBLL();         
-            List<Room> ListRoom = roomBLL.searchRoom_Name(txt_search.Text);
+            List<room> ListRoom = roomBLL.searchRoom_Name(txt_search.Text);
 
             lvRoom.Items.Clear();
-
-            foreach (Room room in ListRoom)
+            if (ListRoom != null)
             {
-                ListViewItem lvi = new ListViewItem(room.id_room + "");
+                foreach (room room in ListRoom)
+                {
+                    ListViewItem lvi = new ListViewItem(room.id_room + "");
 
-                lvi.SubItems.Add(room.room_name + "");
-                lvi.SubItems.Add(room.building + "");
-                lvi.SubItems.Add(room.floor + "");
+                    lvi.SubItems.Add(room.room_name + "");
+                    lvi.SubItems.Add(room.building + "");
+                    lvi.SubItems.Add(room.floor + "");
 
-                lvRoom.Items.Add(lvi);
+                    lvRoom.Items.Add(lvi);
 
-                lvi.Tag = room;
+                    lvi.Tag = room;
+                }
             }
+            else loadListViewRoom();
         }
 
         private void lvRoom_MouseDoubleClick(object sender, MouseEventArgs e)

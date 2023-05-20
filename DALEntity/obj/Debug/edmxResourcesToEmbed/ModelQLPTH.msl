@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLPTHModelStoreContainer" CdmEntityContainer="QLPTHEntities">
+    <EntitySetMapping Name="accounts">
+      <EntityTypeMapping TypeName="QLPTHModel.account">
+        <MappingFragment StoreEntitySet="account">
+          <ScalarProperty Name="id_acc" ColumnName="id_acc" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="id_per" ColumnName="id_per" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="acc_ban" ColumnName="acc_ban" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="computers">
+      <EntityTypeMapping TypeName="QLPTHModel.computer">
+        <MappingFragment StoreEntitySet="computer">
+          <ScalarProperty Name="id_comp" ColumnName="id_comp" />
+          <ScalarProperty Name="id_room" ColumnName="id_room" />
+          <ScalarProperty Name="comp_name" ColumnName="comp_name" />
+          <ScalarProperty Name="present_status" ColumnName="present_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permisions">
+      <EntityTypeMapping TypeName="QLPTHModel.permision">
+        <MappingFragment StoreEntitySet="permision">
+          <ScalarProperty Name="id_per" ColumnName="id_per" />
+          <ScalarProperty Name="name_per" ColumnName="name_per" />
+          <ScalarProperty Name="info" ColumnName="info" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rooms">
+      <EntityTypeMapping TypeName="QLPTHModel.room">
+        <MappingFragment StoreEntitySet="room">
+          <ScalarProperty Name="id_room" ColumnName="id_room" />
+          <ScalarProperty Name="room_name" ColumnName="room_name" />
+          <ScalarProperty Name="building" ColumnName="building" />
+          <ScalarProperty Name="floor" ColumnName="floor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="schedule_detail">
+      <EntityTypeMapping TypeName="QLPTHModel.schedule_detail">
+        <MappingFragment StoreEntitySet="schedule_detail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_tea" ColumnName="id_tea" />
+          <ScalarProperty Name="id_subj" ColumnName="id_subj" />
+          <ScalarProperty Name="id_room" ColumnName="id_room" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="lesson" ColumnName="lesson" />
+          <ScalarProperty Name="num_of_less" ColumnName="num_of_less" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="status">
+      <EntityTypeMapping TypeName="QLPTHModel.status">
+        <MappingFragment StoreEntitySet="status">
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="lesson" ColumnName="lesson" />
+          <ScalarProperty Name="id_comp" ColumnName="id_comp" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subjects">
+      <EntityTypeMapping TypeName="QLPTHModel.subject">
+        <MappingFragment StoreEntitySet="subject">
+          <ScalarProperty Name="id_subj" ColumnName="id_subj" />
+          <ScalarProperty Name="subj_name" ColumnName="subj_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teachers">
+      <EntityTypeMapping TypeName="QLPTHModel.teacher">
+        <MappingFragment StoreEntitySet="teacher">
+          <ScalarProperty Name="id_tea" ColumnName="id_tea" />
+          <ScalarProperty Name="tea_name" ColumnName="tea_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

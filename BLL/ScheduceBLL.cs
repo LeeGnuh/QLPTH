@@ -1,5 +1,4 @@
-﻿using DAL;
-using DTO;
+﻿using DALEntity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +10,7 @@ namespace BLL
     public class ScheduceBLL
     {
         ScheduceDAL ScheduceDAL = new ScheduceDAL();
-        public List<Scheduce> getAllSch()
+        public List<schedule_detail> getAllSch()
         {
             return ScheduceDAL.getAllSch();
         }
@@ -19,11 +18,11 @@ namespace BLL
         {
             return ScheduceDAL.deleteAt(id);
         }
-        public bool addSch_Object(Scheduce Sch)
+        public bool addSch_Object(schedule_detail Sch)
         {
             return ScheduceDAL.addSch_Object(Sch);
         }
-        public bool changeSch_At_Object(int id, Scheduce Sch)
+        public bool changeSch_At_Object(int id, schedule_detail Sch)
         {
             return ScheduceDAL.changeSch_At_Object(id, Sch);
         }

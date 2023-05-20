@@ -9,3 +9,8 @@ E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\obj\Debug\BLL.csproj.CoreCompileI
 E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\obj\Debug\BLL.csproj.CopyComplete
 E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\obj\Debug\BLL.dll
 E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\obj\Debug\BLL.pdb
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\bin\Debug\DALEntity.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\bin\Debug\EntityFramework.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\bin\Debug\DALEntity.pdb
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\bin\Debug\DALEntity.dll.config
+E:\CodeDatabase\Windows\Project\Demo3Layer\BLL\bin\Debug\EntityFramework.xml

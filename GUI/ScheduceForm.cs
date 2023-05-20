@@ -1,5 +1,5 @@
 ﻿using BLL;
-using DTO;
+using DALEntity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,11 +17,11 @@ namespace GUI
         private void loadListViewScheduce()
         {
             ScheduceBLL ScheduceBLL = new ScheduceBLL();
-            List<Scheduce> ListScheduce = ScheduceBLL.getAllSch();
+            List<schedule_detail> ListScheduce = ScheduceBLL.getAllSch();
 
             lvScheduce.Items.Clear();
 
-            foreach (Scheduce sch in ListScheduce)
+            foreach (schedule_detail sch in ListScheduce)
             {
                 ListViewItem lvi = new ListViewItem(sch.id + "");
 
@@ -44,7 +44,7 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Scheduce sch = new Scheduce();
+            schedule_detail sch = new schedule_detail();
 
             sch.id_tea =  cb_id_tea.SelectedValue.ToString();
             sch.id_subj = int.Parse(cb_id_subj.SelectedValue.ToString());
@@ -64,7 +64,7 @@ namespace GUI
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            Scheduce sch = new Scheduce();
+            schedule_detail sch = new schedule_detail();
 
             sch.id = int.Parse(txt_id.Text);
             sch.id_tea = cb_id_tea.SelectedValue.ToString();
@@ -88,7 +88,7 @@ namespace GUI
             if (lvScheduce.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvScheduce.SelectedItems[0];
-                Scheduce sch = lvi.Tag as Scheduce;
+                schedule_detail sch = lvi.Tag as schedule_detail;
                 ScheduceBLL ScheduceBLL = new ScheduceBLL();
 
                 bool kq = ScheduceBLL.deleteAt(sch.id);
@@ -105,13 +105,13 @@ namespace GUI
             if (lvScheduce.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvScheduce.SelectedItems[0];
-                Scheduce sch = lvi.Tag as Scheduce;
+                schedule_detail sch = lvi.Tag as schedule_detail;
 
                 txt_id.Text = sch.id.ToString();
                 cb_id_tea.SelectedValue = sch.id_tea.ToString();
                 cb_id_subj.SelectedValue = sch.id_subj.ToString();
                 cb_id_room.SelectedValue = sch.id_room.ToString();
-                dtp_time.Value = sch.time;
+                dtp_time.Value = (DateTime)sch.time;
                 txt_lesson.Text = sch.lesson.ToString();
                 txt_num_of_less.Text = sch.num_of_less.ToString();                
             }

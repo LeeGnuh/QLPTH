@@ -1,5 +1,5 @@
 ﻿using BLL;
-using DTO;
+using DALEntity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,11 +24,11 @@ namespace GUI
         private void loadListViewComputer()
         {
             ComputerBLL computerBLL = new ComputerBLL();
-            List<Computer> ListComputer = computerBLL.getAllComp_InRoom(id);
+            List<computer> ListComputer = computerBLL.getAllComp_InRoom(id);
 
             lvComputer.Items.Clear();
 
-            foreach (Computer computer in ListComputer)
+            foreach (computer computer in ListComputer)
             {
                 ListViewItem lvi = new ListViewItem(computer.id_comp + "");
 
@@ -51,7 +51,7 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Computer computer = new Computer();
+            computer computer = new computer();
 
             computer.id_room = int.Parse(cb_id_room.SelectedValue.ToString());
             computer.comp_name = txt_comp_name.Text;
@@ -72,7 +72,7 @@ namespace GUI
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            Computer computer = new Computer();
+            computer computer = new computer();
 
             computer.id_comp = int.Parse(txt_id_comp.Text);
             computer.id_room = int.Parse(cb_id_room.SelectedValue.ToString());
@@ -97,7 +97,7 @@ namespace GUI
             if (lvComputer.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvComputer.SelectedItems[0];
-                Computer computer = lvi.Tag as Computer;
+                computer computer = lvi.Tag as computer;
                 ComputerBLL computerBLL = new ComputerBLL();
 
                 bool kq = computerBLL.deleteAt(computer.id_comp);
@@ -112,11 +112,11 @@ namespace GUI
         private void btn_Search_Click(object sender, EventArgs e)
         {
             ComputerBLL computerBLL = new ComputerBLL();
-            List<Computer> ListComputer = computerBLL.searchComputer_Name_In_Room(this.id, txt_search.Text);
+            List<computer> ListComputer = computerBLL.searchComputer_Name_In_Room(this.id, txt_search.Text);
 
             lvComputer.Items.Clear();
 
-            foreach (Computer computer in ListComputer)
+            foreach (computer computer in ListComputer)
             {
                 ListViewItem lvi = new ListViewItem(computer.id_comp + "");
 
@@ -134,7 +134,7 @@ namespace GUI
             if (lvComputer.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvComputer.SelectedItems[0];
-                Computer computer = lvi.Tag as Computer;
+                computer computer = lvi.Tag as computer;
 
                 txt_id_comp.Text = computer.id_comp.ToString();
                 cb_id_room.SelectedValue = computer.id_room.ToString();

@@ -7,3 +7,7 @@ E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\obj\Debug\DAL.csproj.CoreCompileI
 E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\obj\Debug\DAL.csproj.CopyComplete
 E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\obj\Debug\DAL.dll
 E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\obj\Debug\DAL.pdb
+E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\bin\Debug\EntityFramework.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\bin\Debug\EntityFramework.xml
+E:\CodeDatabase\Windows\Project\Demo3Layer\DAL\bin\Debug\EntityFramework.SqlServer.xml

@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL;
-using DTO;
+using DALEntity;
 
 namespace BLL
 {
     public class AccountBLL
     {
         AccountDAL accountDAL = new AccountDAL();
-        public List<Account> getAllAcc()
+        public List<account> getAllAcc()
         {
             return accountDAL.getAllAcc();
         }
@@ -19,11 +18,11 @@ namespace BLL
         {
             return accountDAL.deleteAt(id);
         }
-        public bool addAcc_Object(Account acc)
+        public bool addAcc_Object(account acc)
         {      
             return accountDAL.addAcc_Object(acc);
         }
-        public bool changeAcc_At_Object(int id, Account acc)
+        public bool changeAcc_At_Object(int id, account acc)
         {
             return accountDAL.changeAcc_At_Object(id, acc);
         }

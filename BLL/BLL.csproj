@@ -49,6 +49,10 @@
     <Compile Include="StatusBLL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DALEntity\DALEntity.csproj">
+      <Project>{a553c7a9-95d4-432b-8167-00b09dab31c1}</Project>
+      <Name>DALEntity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{a44eb401-a009-49e1-b1f3-b36308bf06a8}</Project>
       <Name>DAL</Name>

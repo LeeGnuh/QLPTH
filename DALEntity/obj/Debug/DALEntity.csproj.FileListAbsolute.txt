@@ -1,0 +1,12 @@
+E:\CodeDatabase\Windows\Project\Demo3Layer\DALEntity\bin\Debug\DALEntity.dll.config
+E:\CodeDatabase\Windows\Project\Demo3Layer\DALEntity\bin\Debug\DALEntity.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\DALEntity\bin\Debug\DALEntity.pdb
+E:\CodeDatabase\Windows\Project\Demo3Layer\DALEntity\bin\Debug\EntityFramework.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\DALEntity\bin\Debug\EntityFramework.SqlServer.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\DALEntity\bin\Debug\EntityFramework.xml
+E:\CodeDatabase\Windows\Project\Demo3Layer\DALEntity\bin\Debug\EntityFramework.SqlServer.xml
+E:\CodeDatabase\Windows\Project\Demo3Layer\DALEntity\obj\Debug\DALEntity.csproj.AssemblyReference.cache
+E:\CodeDatabase\Windows\Project\Demo3Layer\DALEntity\obj\Debug\DALEntity.csproj.CoreCompileInputs.cache
+E:\CodeDatabase\Windows\Project\Demo3Layer\DALEntity\obj\Debug\DALEntity.csproj.CopyComplete
+E:\CodeDatabase\Windows\Project\Demo3Layer\DALEntity\obj\Debug\DALEntity.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\DALEntity\obj\Debug\DALEntity.pdb

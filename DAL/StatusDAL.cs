@@ -11,7 +11,7 @@ namespace DAL
 {
     public class StatusDAL : DataAccessDAL
     {        
-        List<Status> ListAcc = new List<Status>();
+        List<Status> ListStatus = new List<Status>();
         public List<Status> getAllStt_Of_Comp(int id)
         {
             openConn();
@@ -36,10 +36,10 @@ namespace DAL
                 stt.id_comp = reader.GetInt32(3);
                 stt.detail = reader.GetString(4);
 
-                ListAcc.Add(stt);
+                ListStatus.Add(stt);
             }
             reader.Close();
-            return ListAcc;
+            return ListStatus;
         }
         public List<Status> select_id(int id)
         {

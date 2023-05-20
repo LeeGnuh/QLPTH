@@ -45,7 +45,37 @@
       "ProjectGuid": "f43fe442-a985-41d8-a99f-f0c6fc90eead",
       "DisplayName": "MaterialGUI",
       "ColorIndex": 7
+    },
+    "0205c82a-3876-456f-b0f1-0ebc455f7f33": {
+      "ProjectGuid": "0205c82a-3876-456f-b0f1-0ebc455f7f33",
+      "DisplayName": "EFDAL",
+      "ColorIndex": 8
+    },
+    "71e677ec-56da-4127-843f-82fe20fb83c3": {
+      "ProjectGuid": "71e677ec-56da-4127-843f-82fe20fb83c3",
+      "DisplayName": "EF_DAL",
+      "ColorIndex": 9
+    },
+    "26fd3a2b-5b1a-4bf3-ac99-6af87fa6ac16": {
+      "ProjectGuid": "26fd3a2b-5b1a-4bf3-ac99-6af87fa6ac16",
+      "DisplayName": "DALEF",
+      "ColorIndex": 10
+    },
+    "4be3ba20-8e76-4982-aeb9-7d0e7795c759": {
+      "ProjectGuid": "4be3ba20-8e76-4982-aeb9-7d0e7795c759",
+      "DisplayName": "DALEntity",
+      "ColorIndex": 11
+    },
+    "5fc95145-9a7c-4afa-a514-c3339971c272": {
+      "ProjectGuid": "5fc95145-9a7c-4afa-a514-c3339971c272",
+      "DisplayName": "DALEnFr",
+      "ColorIndex": 12
+    },
+    "a553c7a9-95d4-432b-8167-00b09dab31c1": {
+      "ProjectGuid": "a553c7a9-95d4-432b-8167-00b09dab31c1",
+      "DisplayName": "DALEntity",
+      "ColorIndex": 13
     }
   },
-  "NextColorIndex": 8
+  "NextColorIndex": 14
 }

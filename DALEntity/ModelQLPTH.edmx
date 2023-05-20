@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QLPTHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="account">
+          <Key>
+            <PropertyRef Name="id_acc" />
+          </Key>
+          <Property Name="id_acc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="255" />
+          <Property Name="password" Type="varchar" MaxLength="255" />
+          <Property Name="id_per" Type="int" />
+          <Property Name="full_name" Type="nvarchar" MaxLength="255" />
+          <Property Name="acc_ban" Type="bit" />
+        </EntityType>
+        <EntityType Name="computer">
+          <Key>
+            <PropertyRef Name="id_comp" />
+          </Key>
+          <Property Name="id_comp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_room" Type="int" />
+          <Property Name="comp_name" Type="nvarchar" MaxLength="255" />
+          <Property Name="present_status" Type="bit" />
+        </EntityType>
+        <EntityType Name="permision">
+          <Key>
+            <PropertyRef Name="id_per" />
+          </Key>
+          <Property Name="id_per" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_per" Type="nvarchar" MaxLength="255" />
+          <Property Name="info" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="room">
+          <Key>
+            <PropertyRef Name="id_room" />
+          </Key>
+          <Property Name="id_room" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="room_name" Type="varchar" MaxLength="255" />
+          <Property Name="building" Type="varchar" MaxLength="255" />
+          <Property Name="floor" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="schedule_detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_tea" Type="varchar" MaxLength="20" />
+          <Property Name="id_subj" Type="int" />
+          <Property Name="id_room" Type="int" />
+          <Property Name="time" Type="date" />
+          <Property Name="lesson" Type="int" />
+          <Property Name="num_of_less" Type="int" />
+        </EntityType>
+        <EntityType Name="status">
+          <Key>
+            <PropertyRef Name="id_status" />
+          </Key>
+          <Property Name="id_status" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="time" Type="date" />
+          <Property Name="lesson" Type="int" />
+          <Property Name="id_comp" Type="int" />
+          <Property Name="detail" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="subject">
+          <Key>
+            <PropertyRef Name="id_subj" />
+          </Key>
+          <Property Name="id_subj" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="subj_name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="teacher">
+          <Key>
+            <PropertyRef Name="id_tea" />
+          </Key>
+          <Property Name="id_tea" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="tea_name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__account__id_per__31EC6D26">
+          <End Role="permision" Type="Self.permision" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="account" Type="Self.account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="permision">
+              <PropertyRef Name="id_per" />
+            </Principal>
+            <Dependent Role="account">
+              <PropertyRef Name="id_per" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__computer__id_roo__35BCFE0A">
+          <End Role="room" Type="Self.room" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="room">
+              <PropertyRef Name="id_room" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="id_room" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__schedule___id_ro__32E0915F">
+          <End Role="room" Type="Self.room" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="schedule_detail" Type="Self.schedule_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="room">
+              <PropertyRef Name="id_room" />
+            </Principal>
+            <Dependent Role="schedule_detail">
+              <PropertyRef Name="id_room" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__schedule___id_su__34C8D9D1">
+          <End Role="subject" Type="Self.subject" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="schedule_detail" Type="Self.schedule_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subject">
+              <PropertyRef Name="id_subj" />
+            </Principal>
+            <Dependent Role="schedule_detail">
+              <PropertyRef Name="id_subj" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__schedule___id_te__33D4B598">
+          <End Role="teacher" Type="Self.teacher" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="schedule_detail" Type="Self.schedule_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="teacher">
+              <PropertyRef Name="id_tea" />
+            </Principal>
+            <Dependent Role="schedule_detail">
+              <PropertyRef Name="id_tea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__status__id_comp__36B12243">
+          <End Role="computer" Type="Self.computer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="status" Type="Self.status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="computer">
+              <PropertyRef Name="id_comp" />
+            </Principal>
+            <Dependent Role="status">
+              <PropertyRef Name="id_comp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLPTHModelStoreContainer">
+          <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="computer" EntityType="Self.computer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="permision" EntityType="Self.permision" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="room" EntityType="Self.room" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="schedule_detail" EntityType="Self.schedule_detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="status" EntityType="Self.status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subject" EntityType="Self.subject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="teacher" EntityType="Self.teacher" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__account__id_per__31EC6D26" Association="Self.FK__account__id_per__31EC6D26">
+            <End Role="permision" EntitySet="permision" />
+            <End Role="account" EntitySet="account" />
+          </AssociationSet>
+          <AssociationSet Name="FK__computer__id_roo__35BCFE0A" Association="Self.FK__computer__id_roo__35BCFE0A">
+            <End Role="room" EntitySet="room" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__schedule___id_ro__32E0915F" Association="Self.FK__schedule___id_ro__32E0915F">
+            <End Role="room" EntitySet="room" />
+            <End Role="schedule_detail" EntitySet="schedule_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__schedule___id_su__34C8D9D1" Association="Self.FK__schedule___id_su__34C8D9D1">
+            <End Role="subject" EntitySet="subject" />
+            <End Role="schedule_detail" EntitySet="schedule_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__schedule___id_te__33D4B598" Association="Self.FK__schedule___id_te__33D4B598">
+            <End Role="teacher" EntitySet="teacher" />
+            <End Role="schedule_detail" EntitySet="schedule_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__status__id_comp__36B12243" Association="Self.FK__status__id_comp__36B12243">
+            <End Role="computer" EntitySet="computer" />
+            <End Role="status" EntitySet="status" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QLPTHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="account">
+          <Key>
+            <PropertyRef Name="id_acc" />
+          </Key>
+          <Property Name="id_acc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="id_per" Type="Int32" />
+          <Property Name="full_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="acc_ban" Type="Boolean" />
+          <NavigationProperty Name="permision" Relationship="Self.FK__account__id_per__31EC6D26" FromRole="account" ToRole="permision" />
+        </EntityType>
+        <EntityType Name="computer">
+          <Key>
+            <PropertyRef Name="id_comp" />
+          </Key>
+          <Property Name="id_comp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_room" Type="Int32" />
+          <Property Name="comp_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="present_status" Type="Boolean" />
+          <NavigationProperty Name="room" Relationship="Self.FK__computer__id_roo__35BCFE0A" FromRole="computer" ToRole="room" />
+          <NavigationProperty Name="status" Relationship="Self.FK__status__id_comp__36B12243" FromRole="computer" ToRole="status" />
+        </EntityType>
+        <EntityType Name="permision">
+          <Key>
+            <PropertyRef Name="id_per" />
+          </Key>
+          <Property Name="id_per" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_per" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="info" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="accounts" Relationship="Self.FK__account__id_per__31EC6D26" FromRole="permision" ToRole="account" />
+        </EntityType>
+        <EntityType Name="room">
+          <Key>
+            <PropertyRef Name="id_room" />
+          </Key>
+          <Property Name="id_room" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="room_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="building" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="floor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="computers" Relationship="Self.FK__computer__id_roo__35BCFE0A" FromRole="room" ToRole="computer" />
+          <NavigationProperty Name="schedule_detail" Relationship="Self.FK__schedule___id_ro__32E0915F" FromRole="room" ToRole="schedule_detail" />
+        </EntityType>
+        <EntityType Name="schedule_detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_tea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="id_subj" Type="Int32" />
+          <Property Name="id_room" Type="Int32" />
+          <Property Name="time" Type="DateTime" Precision="0" />
+          <Property Name="lesson" Type="Int32" />
+          <Property Name="num_of_less" Type="Int32" />
+          <NavigationProperty Name="room" Relationship="Self.FK__schedule___id_ro__32E0915F" FromRole="schedule_detail" ToRole="room" />
+          <NavigationProperty Name="subject" Relationship="Self.FK__schedule___id_su__34C8D9D1" FromRole="schedule_detail" ToRole="subject" />
+          <NavigationProperty Name="teacher" Relationship="Self.FK__schedule___id_te__33D4B598" FromRole="schedule_detail" ToRole="teacher" />
+        </EntityType>
+        <EntityType Name="status">
+          <Key>
+            <PropertyRef Name="id_status" />
+          </Key>
+          <Property Name="id_status" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="DateTime" Precision="0" />
+          <Property Name="lesson" Type="Int32" />
+          <Property Name="id_comp" Type="Int32" />
+          <Property Name="detail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="computer" Relationship="Self.FK__status__id_comp__36B12243" FromRole="status" ToRole="computer" />
+        </EntityType>
+        <EntityType Name="subject">
+          <Key>
+            <PropertyRef Name="id_subj" />
+          </Key>
+          <Property Name="id_subj" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="subj_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="schedule_detail" Relationship="Self.FK__schedule___id_su__34C8D9D1" FromRole="subject" ToRole="schedule_detail" />
+        </EntityType>
+        <EntityType Name="teacher">
+          <Key>
+            <PropertyRef Name="id_tea" />
+          </Key>
+          <Property Name="id_tea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tea_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="schedule_detail" Relationship="Self.FK__schedule___id_te__33D4B598" FromRole="teacher" ToRole="schedule_detail" />
+        </EntityType>
+        <Association Name="FK__account__id_per__31EC6D26">
+          <End Role="permision" Type="Self.permision" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="account" Type="Self.account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="permision">
+              <PropertyRef Name="id_per" />
+            </Principal>
+            <Dependent Role="account">
+              <PropertyRef Name="id_per" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__computer__id_roo__35BCFE0A">
+          <End Role="room" Type="Self.room" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="room">
+              <PropertyRef Name="id_room" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="id_room" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__status__id_comp__36B12243">
+          <End Role="computer" Type="Self.computer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="status" Type="Self.status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="computer">
+              <PropertyRef Name="id_comp" />
+            </Principal>
+            <Dependent Role="status">
+              <PropertyRef Name="id_comp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__schedule___id_ro__32E0915F">
+          <End Role="room" Type="Self.room" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="schedule_detail" Type="Self.schedule_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="room">
+              <PropertyRef Name="id_room" />
+            </Principal>
+            <Dependent Role="schedule_detail">
+              <PropertyRef Name="id_room" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__schedule___id_su__34C8D9D1">
+          <End Role="subject" Type="Self.subject" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="schedule_detail" Type="Self.schedule_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subject">
+              <PropertyRef Name="id_subj" />
+            </Principal>
+            <Dependent Role="schedule_detail">
+              <PropertyRef Name="id_subj" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__schedule___id_te__33D4B598">
+          <End Role="teacher" Type="Self.teacher" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="schedule_detail" Type="Self.schedule_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="teacher">
+              <PropertyRef Name="id_tea" />
+            </Principal>
+            <Dependent Role="schedule_detail">
+              <PropertyRef Name="id_tea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLPTHEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="accounts" EntityType="Self.account" />
+          <EntitySet Name="computers" EntityType="Self.computer" />
+          <EntitySet Name="permisions" EntityType="Self.permision" />
+          <EntitySet Name="rooms" EntityType="Self.room" />
+          <EntitySet Name="schedule_detail" EntityType="Self.schedule_detail" />
+          <EntitySet Name="status" EntityType="Self.status" />
+          <EntitySet Name="subjects" EntityType="Self.subject" />
+          <EntitySet Name="teachers" EntityType="Self.teacher" />
+          <AssociationSet Name="FK__account__id_per__31EC6D26" Association="Self.FK__account__id_per__31EC6D26">
+            <End Role="permision" EntitySet="permisions" />
+            <End Role="account" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__computer__id_roo__35BCFE0A" Association="Self.FK__computer__id_roo__35BCFE0A">
+            <End Role="room" EntitySet="rooms" />
+            <End Role="computer" EntitySet="computers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__status__id_comp__36B12243" Association="Self.FK__status__id_comp__36B12243">
+            <End Role="computer" EntitySet="computers" />
+            <End Role="status" EntitySet="status" />
+          </AssociationSet>
+          <AssociationSet Name="FK__schedule___id_ro__32E0915F" Association="Self.FK__schedule___id_ro__32E0915F">
+            <End Role="room" EntitySet="rooms" />
+            <End Role="schedule_detail" EntitySet="schedule_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__schedule___id_su__34C8D9D1" Association="Self.FK__schedule___id_su__34C8D9D1">
+            <End Role="subject" EntitySet="subjects" />
+            <End Role="schedule_detail" EntitySet="schedule_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__schedule___id_te__33D4B598" Association="Self.FK__schedule___id_te__33D4B598">
+            <End Role="teacher" EntitySet="teachers" />
+            <End Role="schedule_detail" EntitySet="schedule_detail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QLPTHModelStoreContainer" CdmEntityContainer="QLPTHEntities">
+          <EntitySetMapping Name="accounts">
+            <EntityTypeMapping TypeName="QLPTHModel.account">
+              <MappingFragment StoreEntitySet="account">
+                <ScalarProperty Name="id_acc" ColumnName="id_acc" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="id_per" ColumnName="id_per" />
+                <ScalarProperty Name="full_name" ColumnName="full_name" />
+                <ScalarProperty Name="acc_ban" ColumnName="acc_ban" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="computers">
+            <EntityTypeMapping TypeName="QLPTHModel.computer">
+              <MappingFragment StoreEntitySet="computer">
+                <ScalarProperty Name="id_comp" ColumnName="id_comp" />
+                <ScalarProperty Name="id_room" ColumnName="id_room" />
+                <ScalarProperty Name="comp_name" ColumnName="comp_name" />
+                <ScalarProperty Name="present_status" ColumnName="present_status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="permisions">
+            <EntityTypeMapping TypeName="QLPTHModel.permision">
+              <MappingFragment StoreEntitySet="permision">
+                <ScalarProperty Name="id_per" ColumnName="id_per" />
+                <ScalarProperty Name="name_per" ColumnName="name_per" />
+                <ScalarProperty Name="info" ColumnName="info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rooms">
+            <EntityTypeMapping TypeName="QLPTHModel.room">
+              <MappingFragment StoreEntitySet="room">
+                <ScalarProperty Name="id_room" ColumnName="id_room" />
+                <ScalarProperty Name="room_name" ColumnName="room_name" />
+                <ScalarProperty Name="building" ColumnName="building" />
+                <ScalarProperty Name="floor" ColumnName="floor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="schedule_detail">
+            <EntityTypeMapping TypeName="QLPTHModel.schedule_detail">
+              <MappingFragment StoreEntitySet="schedule_detail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_tea" ColumnName="id_tea" />
+                <ScalarProperty Name="id_subj" ColumnName="id_subj" />
+                <ScalarProperty Name="id_room" ColumnName="id_room" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="lesson" ColumnName="lesson" />
+                <ScalarProperty Name="num_of_less" ColumnName="num_of_less" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="status">
+            <EntityTypeMapping TypeName="QLPTHModel.status">
+              <MappingFragment StoreEntitySet="status">
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="lesson" ColumnName="lesson" />
+                <ScalarProperty Name="id_comp" ColumnName="id_comp" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subjects">
+            <EntityTypeMapping TypeName="QLPTHModel.subject">
+              <MappingFragment StoreEntitySet="subject">
+                <ScalarProperty Name="id_subj" ColumnName="id_subj" />
+                <ScalarProperty Name="subj_name" ColumnName="subj_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="teachers">
+            <EntityTypeMapping TypeName="QLPTHModel.teacher">
+              <MappingFragment StoreEntitySet="teacher">
+                <ScalarProperty Name="id_tea" ColumnName="id_tea" />
+                <ScalarProperty Name="tea_name" ColumnName="tea_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

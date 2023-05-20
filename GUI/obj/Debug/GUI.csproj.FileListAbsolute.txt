@@ -13,8 +13,6 @@ E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.csproj.CoreCompileI
 E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.csproj.CopyComplete
 E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.exe
 E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.pdb
-E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\bin\Debug\DAL.dll
-E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\bin\Debug\DAL.pdb
 E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\bin\Debug\MaterialDesignColors.dll
 E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\bin\Debug\MaterialDesignThemes.Wpf.dll
 E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\bin\Debug\MaterialDesignColors.pdb
@@ -27,3 +25,10 @@ E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.ComputerForm.resour
 E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.StatusForm.resources
 E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.ScheduceForm.resources
 E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\obj\Debug\GUI.LoginForm.resources
+E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\bin\Debug\EntityFramework.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\bin\Debug\EntityFramework.SqlServer.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\bin\Debug\EntityFramework.xml
+E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\bin\Debug\EntityFramework.SqlServer.xml
+E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\bin\Debug\DALEntity.dll
+E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\bin\Debug\DALEntity.pdb
+E:\CodeDatabase\Windows\Project\Demo3Layer\GUI\bin\Debug\DALEntity.dll.config
